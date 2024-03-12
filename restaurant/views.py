@@ -18,6 +18,9 @@ def option_list(request, category_slug=None):
                     {'category': category,
                     'categories': categories,
                     'options':options})
+
+
+
     
 
 def option_detail(request, id, slug):
@@ -31,4 +34,6 @@ def option_detail(request, id, slug):
 
 
 
-                      
+
+
+ 

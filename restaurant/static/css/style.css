@@ -1,4 +1,70 @@
-#company-name{
-    color: black;
+/* .navbar-brand{
+    color: red;
    
 }
+
+.ul{
+    display: inline-block;
+} */
+
+/* #navigation {
+    background:#5a07e0;
+    color:#0f0f0f;
+    padding:15px 100px;
+    overflow:auto;
+} */
+
+body{
+    background-color: rgb(232, 243, 242);
+ }
+
+ .masthead {
+    
+    min-height: 200px;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+   
+  }
+
+#header-image{
+    border-radius: 30px;
+    padding-top: 5px;
+ 
+}
+
+#bottom-nav{
+    float: right;
+}
+
+
+
+
+
+
+
+
+.carousel-inner > .item {
+    max-width: 20vw;
+    max-height: 40vh;
+    align-content: center;
+    
+    
+ }
+
+ .carousel-inner img{
+    max-width: 20vw;
+    max-height: 40vh;
+    border-radius: 35px;
+ }
+
+ .carousel-inner .h5{
+    color: black;
+ }
+
+ #menu-options{
+    padding: 15px;
+    border-top: 20px;
+ }
