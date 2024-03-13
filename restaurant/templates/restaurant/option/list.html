@@ -55,7 +55,7 @@
   <div class="row">
     <div class="col-12 " id="menu-options">
       <a href="{{ option.get_absolute_url }}">
-          <img src="{% if option.image %}{{option.image.url}}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}">
+          <img src="{% if option.image %}{{option.image.url}}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}" id="basket-image" class="img-fluid">
       </a>
       <a href="{{ option.get_absolute_url }}">{{ option.name }}</a>
       <br>

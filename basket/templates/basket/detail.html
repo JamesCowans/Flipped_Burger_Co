@@ -27,7 +27,7 @@
                                 <tr>
                                     <td>
                                         <a href="{{ option.get_absolute_url }}">
-                                            <img src="{% if option.image %}{{ option.image.url }}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}" class="img-fluid">
+                                            <img src="{% if option.image %}{{ option.image.url }}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}" class="img-fluid" id="basket-image">
                                         </a>
                                     </td>
                                     <td>{{ option.name }}</td>
@@ -45,8 +45,8 @@
                                             {% csrf_token %}
                                         </form>
                                     </td>
-                                    <td class="num">£{{ item.price }}</td>
-                                    <td class="num">£{{ item.total_price }}</td>
+                                    <td class="num" id="basket-price">£{{ item.price }}</td>
+                                    <td class="num" id="basket-price">£{{ item.total_price }}</td>
                                 </tr>
                             {% endwith %}
                         {% endfor %}

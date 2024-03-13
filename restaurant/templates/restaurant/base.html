@@ -59,8 +59,8 @@
         <a href="{% url 'basket:basket_detail' %}">
           {{ total_items }} item{{ total_items|pluralize }},
           £{{ basket.get_total_price }}
-        </a>"
-      {% else %}
+        </a>
+      {% elif not order %}
         Your basket is empty.
       {% endif %}
     {% endwith %}
@@ -75,7 +75,7 @@
   <footer>
     <div class="container"></div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-bottom ">
-        <ul id="bottom-nav">
+        <ul class="navbar-nav ms-auto" id="login">
           <li>Restaurant Login</li>
         </ul>
       </nav>
