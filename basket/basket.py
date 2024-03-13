@@ -9,7 +9,7 @@ class Basket:
         basket = self.session.get(settings.BASKET_SESSION_ID)
         if not basket:
 
-            basket.self.session[settings.BASKET_SESSION_ID] = {}
+            basket = self.session[settings.BASKET_SESSION_ID] = {}
         self.basket = basket
 
     def add(self, option, quantity=1, override_quantity=False):
@@ -22,7 +22,7 @@ class Basket:
             self.basket[option_id]['quantity'] = quantity
         else:
             self.basket[option_id]['quantity'] += quantity
-        self.save()
+            self.save()
 
     def save(self):
 
@@ -34,11 +34,11 @@ class Basket:
             del self.basket[option_id]
             self.save()
 
-    def __basket_items__(self):
+    def __iter__(self):
 
         option_ids = self.basket.keys()
         options = Option.objects.filter(id__in=option_ids)
-        basket - self.basket.copy()
+        basket = self.basket.copy()
         for option in options:
             basket[str(option.id)]['option'] = option
         for item in basket.values():
@@ -46,11 +46,11 @@ class Basket:
             item['total_price'] = item['price'] * item['quantity']
             yield item
 
-    def __num_basket_items__(self):
+    def __len__(self):
 
         return sum(item['quantity'] for item in self.basket.values())
     
-    def total_basket_price(self):
+    def total_price(self):
         return sum(Decimal(item['price']) * item ['quantity'] for item in self.basket.values())
     
     def empty_basket(self):

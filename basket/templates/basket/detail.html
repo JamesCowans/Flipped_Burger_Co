@@ -28,7 +28,14 @@
                             </a>
                         </td>
                         <td>{{ option.name }}</td>
-                        <td>{{ item.quantity }}</td>
+                        <td>
+                            <form action="{% url 'basket:basket_add' option.id %}" method="post">
+                                {{ item.update_quantity_form.quantity }}
+                                {{ item.update_quantity_form.override }}
+                                <input type="submit" value="update">
+                                {% csrf_token %}
+                            </form>
+                        </td>
                         <td>
                             <form action="{% url 'basket:basket_remove' option.id %}" method = "post">
                                 <input type="submit" value="Remove">
@@ -39,7 +46,7 @@
                         <td class="num">£{{ item.total_price }}</td>
                     </tr>
                 {% endwith %}
-            {% endfor % }
+            {% endfor %}
             <tr class="total">
                 <td>Total</td>
                 <td colspan="4"></td>

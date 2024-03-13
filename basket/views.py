@@ -21,7 +21,7 @@ def basket_add(request, option_id):
 
 
 @require_POST
-def basket_remove(request, product_id):
+def basket_remove(request, option_id):
     basket = Basket(request)
     option = get_object_or_404(Option, id=option_id)
     basket.remove(option)
@@ -29,6 +29,8 @@ def basket_remove(request, product_id):
 
 def basket_detail(request):
     basket = Basket(request)
+    for item in basket:
+        item['update_quantity_form'] = BasketAddOptionForm(initial={'quantity': item['quantity'], 'override': True})
     return render(request, 'basket/detail.html', {'basket' : basket})
 
 
