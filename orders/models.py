@@ -9,8 +9,8 @@ class Order(models.Model):
     last_name = models.CharField(max_length =50)
     email = models.EmailField()
     address = models.CharField(max_length=250)
-    post_code = models.CharField(max_length=10)
     town =  models.CharField(max_length=50)
+    post_code = models.CharField(max_length=10)   
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
