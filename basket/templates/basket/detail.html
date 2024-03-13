@@ -1,0 +1,54 @@
+{% extends 'restaurant/base.html' %}
+{% load static %}
+
+{% block title %}
+    Shopping Basket
+{% endblock %}
+
+{% block content %}
+    <h1>Shopping Basket</h1>
+    <table class="basket">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Option</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+                <th>Item Price</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in basket %}
+                {% with option=item.option %}
+                    <tr>
+                        <td>
+                            <a href="{{ option.get_absolute_url }}">
+                                <img src="{% if option.image %}{{ option.image.url }}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}">
+                            </a>
+                        </td>
+                        <td>{{ option.name }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>
+                            <form action="{% url 'basket:basket_remove' option.id %}" method = "post">
+                                <input type="submit" value="Remove">
+                                {% csrf_token %}
+                            </form>
+                        </td>
+                        <td class="num">£{{ item.price }}</td>
+                        <td class="num">£{{ item.total_price }}</td>
+                    </tr>
+                {% endwith %}
+            {% endfor % }
+            <tr class="total">
+                <td>Total</td>
+                <td colspan="4"></td>
+                <td class="num">£{{ basket.get_total_price }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="text-right">
+        <a href="{% url 'restaurant:option_list' %}" class="button light">Continue Shopping</a>
+        <a href="#" class="button">Checkout</a>
+    </p>
+{% endblock %}

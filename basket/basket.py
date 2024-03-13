@@ -9,7 +9,7 @@ class Basket:
         basket = self.session.get(settings.BASKET_SESSION_ID)
         if not basket:
 
-            basket.self.session[settings.BASKET_SESSION_ID) = {}
+            basket.self.session[settings.BASKET_SESSION_ID] = {}
         self.basket = basket
 
     def add(self, option, quantity=1, override_quantity=False):
@@ -57,4 +57,4 @@ class Basket:
         del self.session[settings.BASKET_SESSION_ID]
         self.save()
 
-        
+

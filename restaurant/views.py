@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Option
+from basket.forms import BasketAddOptionForm
 
 
 
@@ -28,10 +29,10 @@ def option_detail(request, id, slug):
                                id=id,
                                slug=slug,
                                available =True)
+    basket_option_form = BasketAddOptionForm()
     return render(request,
                   'restaurant/option/detail.html',
-                  {'option': option})
-
+                  {'option': option, 'basket_option_form' : basket_option_form})
 
 
 
