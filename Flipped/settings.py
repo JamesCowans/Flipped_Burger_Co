@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'restaurant.apps.RestaurantConfig',
     'basket.apps.BasketConfig',
+    'orders.apps.OrdersConfig',
 ]
 
 MIDDLEWARE = [
