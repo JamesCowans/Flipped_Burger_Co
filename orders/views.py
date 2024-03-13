@@ -15,8 +15,8 @@ def order_place(request):
             for item in basket:
                 OrderItem.objects.create(order=order, option = item['option'], price=item['price'], quantity=item['quantity'])
 
-            empty_basket()
-            return render(request,'orders/order/placed.html',{'order': order})
+                basket.empty_basket()
+                return render(request,'orders/order/placed.html',{'order': order})
     else:
         form =OrderPlacementForm()
     return render(request, 'orders/order/place.html', {'basket': basket, 'form': form})
