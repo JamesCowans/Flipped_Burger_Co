@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'restaurant.apps.RestaurantConfig',
+    'basket.apps.BasketConfig',
 ]
 
 MIDDLEWARE = [
@@ -140,4 +141,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+
+# Shopping basket
+
+BASKET_SESSION_ID = 'basket'
 
