@@ -27,7 +27,7 @@
                                 <tr>
                                     <td>
                                         <a href="{{ option.get_absolute_url }}">
-                                            <img src="{% if option.image %}{{% static 'option.image.url' %}}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}" class="img-fluid" id="basket-image">
+                                            <img src="{% if option.image %}{{ option.image.url }}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}" class="img-fluid" id="basket-image">
                                         </a>
                                     </td>
                                     <td>{{ option.name }}</td>

@@ -8,3 +8,6 @@ urlpatterns = [
     path('add/<int:option_id>/', views.basket_add, name='basket_add'),
     path('remove/<int:option_id>/', views.basket_remove, name='basket_remove'),
 ]
+
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
