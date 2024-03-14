@@ -81,3 +81,8 @@ body{
 .basket{
    padding-left: 10px;
 }
+
+#menu-images{
+   max-width: 40px;
+   max-height: 40px;
+}
