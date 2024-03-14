@@ -1,10 +1,14 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome James Cowans,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+### Flipped Burger Company 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Background
+
+In the local area there is a small burger company. This company only use Facebook and Just Eat to run their online presence. The issue they are having is the % cut that Just Eat take, they currently only use them to allow online orders to be placed. Flipped Burger Company provide their own delivery drivers; the other side to the problem to be solved is that of bankig charges, the business would be more profitable if run as a cash business and therefore not paying transaction charges.
+
+## The Solution
+
+The solution for these issues was to create a bespoke ordering app that allowed them to take orders online from customers who would then pay cash when collecting or using the card machine upon delivery, this would save a substantial amount of money on various charges and help the business remain profitable during economically challenging times.
 
 ## Gitpod Reminders
 
