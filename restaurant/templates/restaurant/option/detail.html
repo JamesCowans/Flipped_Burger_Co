@@ -1,5 +1,6 @@
 {% extends 'restaurant/base.html' %}
 {% load static %}
+{% load cloudinary %}
 
 {% block title %}
     {{ option.name }}
@@ -10,7 +11,9 @@
     <div class="container">
         <div class="row">
         <div class="col-12 ">
-            <img class='img-fluid' id='menu-images' src="{% if option.image %}{{ option.image.url }}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}">
+            <!-- <img class='img-fluid' id='menu-images' src="{% if option.image %}{{ option.image.url }}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}"> -->
+            {% load cloudinary %}
+            {% cloudinary photo.image %}
             <h1>{{ option.name }}</h1>
             <h2>
                 <a href="{{ option.category.get_absolute_url }}">
