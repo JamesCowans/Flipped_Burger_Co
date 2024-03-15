@@ -16,6 +16,19 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
+
+import cloudinary
+
+cloudinary.config(
+cloud_name = "dbgflnzl3",
+api_key = "358886197589543",
+api_secret = "D7eOqUYJg-B4_8LPR8MwPJQyNAY",
+api_proxy = "http://proxy.server:9999"
+)
+
+import cloudinary.uploader
+import cloudinary.api
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -44,6 +57,8 @@ INSTALLED_APPS = [
     'restaurant.apps.RestaurantConfig',
     'basket.apps.BasketConfig',
     'orders.apps.OrdersConfig',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +147,8 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 

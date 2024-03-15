@@ -5,22 +5,34 @@ Checkout
 {% endblock %}
 
 {% block content %}
-    <h1>Checkout</h1>
-    <div class="customer_order_information">
-        <h3>Your order</h3>
-        <ul>
-            {% for item in basket %}
-            <li>
-                {{ item.quantity }}x {{ item.option.name }}
-                <span>£{{ item.total_price }}</span>
-            </li>
-            {% endfor %}
-        </ul>
-        <p>Total: £{{ basket.get_total_price }}</p>
+<div class="container-fluid">
+    <div class="row mb-3">
+        <div class="col-sm-10">
+            <h1>Checkout</h1>
+            <div class="customer_order_information">
+                <h3>Your order</h3>
+                <ul>
+                    {% for item in basket %}
+                    <li>
+                        {{ item.quantity }}x {{ item.option.name }}
+                        <span>£{{ item.total_price }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <p>Total: £{{ basket.get_total_price }}</p>
+            </div>
+            <form class="row align-items-center" method="post" class="order-form">
+                <div class="col align-items-center">
+                    {{ form.as_p }}
+                    <p><input type="submit" value="Place order"></p>
+                    {% csrf_token %}
+                </div>
+            </form>
+        </div>
     </div>
-    <form method="post" class="order-form">
-        {{ form.as_p }}
-        <p><input type="submit" value="Place order"></p>
-        {% csrf_token %}
-    </form>
+</div>
+<form class="row gy-2 gx-3 align-items-center">
+
+</form>
 {% endblock %}
+
