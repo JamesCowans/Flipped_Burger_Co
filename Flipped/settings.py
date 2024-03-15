@@ -42,7 +42,7 @@ SECRET_KEY = 'django-insecure-s90g368*u_l%t^7sw3li#%81%tl7(p#w4!2@8k5!f6r5+290fj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','.herokuapp.com']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','.herokuapp.com', 'cloudinary']
 
 
 # Application definition
@@ -54,12 +54,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'restaurant.apps.RestaurantConfig',
     'basket.apps.BasketConfig',
     'orders.apps.OrdersConfig',
-    'cloudinary_storage',
     'cloudinary',
+
 ]
+    
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -144,13 +146,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 
 # Default primary key field type

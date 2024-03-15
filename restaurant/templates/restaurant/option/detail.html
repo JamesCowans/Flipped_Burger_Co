@@ -11,9 +11,15 @@
     <div class="container">
         <div class="row">
         <div class="col-12 ">
-            <!-- <img class='img-fluid' id='menu-images' src="{% if option.image %}{{ option.image.url }}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}"> -->
-            {% load cloudinary %}
-            {% cloudinary photo.image %}
+            <!-- <img class='img-fluid' id='menu-images' src="{% if option.image %}{{{ option.image.url }}}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}"> -->
+            {% if "placeholder" in about.profile_image.url %}
+            <img src="{% static 'images/awaiting_image.png' %}" width="75%"
+              alt="placeholder image" >
+            {% else %}
+            <img src="{{ detail.option_image.url }}" width="75%"
+              alt="{{ about.title }}">
+            {% endif %}
+       
             <h1>{{ option.name }}</h1>
             <h2>
                 <a href="{{ option.category.get_absolute_url }}">

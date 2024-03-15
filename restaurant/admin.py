@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import Category, Option
+import cloudinary
+from cloudinary.models import CloudinaryField
 
 
 # Register your models here.
