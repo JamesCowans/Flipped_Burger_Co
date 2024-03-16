@@ -1,6 +1,6 @@
 {% extends 'restaurant/base.html' %}
 {% load static %}
-{% load cloudinary %}
+
 
 {% block title %}
     {{ option.name }}
@@ -8,17 +8,17 @@
 
 {% block content %}
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12 ">
+            <div class="col-8 ">
                 <h1>{% if category %}{{ category.name }}{% else %}Menu Options{% endif %}</h1>
                 {% for option in options %}
-                <div class="image-container">
+                <div id="basket-image">
                     {% if "placeholder" in option.image.url %}
-                    <img class="card-img-top" src="{% static 'img/awaiting_image.png' %}"
+                    <img id="basket-image" src="{% static 'img/awaiting_image.png' %}"
                       alt="placeholder image">
                     {% else %}
-                    <img class="card-img-top" src=" {{ option.image.url }}">
+                    <img class="img-fluid food-image" id="basket-image" src=" {{ option.image.url }}">
                     {% endif %}
                 </div>
             </div>

@@ -15,18 +15,19 @@
               
         {% endfor %}
               {% for option in options %}
-              <div class="image-container">
+              <div>
                   {% if "placeholder" in option.image.url %}
-                  <img class="card-img-top" src="{% static 'img/awaiting_image.png' %}"
+                  <img id="basket-image" src="{% static 'img/awaiting_image.png' %}"
                     alt="placeholder image">
                   {% else %}
-                  <img class="card-img-top" src=" {{ option.image.url }}">
+                  <img class="img-fluid food-image" id="basket-image" src=" {{ option.image.url }}">
+                  <a href ="{{ option.get_absolute_url }}">{{ option.name }}</a>
                
               </div>
           </div>
         
 
-          <a href ="{{ option.get_absolute_url }}">{{ option.name }}</a>
+          
           <br>
           £{{ option.price }}
         </div>
