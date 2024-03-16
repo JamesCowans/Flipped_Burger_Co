@@ -17,14 +17,14 @@ if os.path.isfile('env.py'):
     import env
 
 
-import cloudinary
+# import cloudinary
 
-cloudinary.config(
-cloud_name = "dbgflnzl3",
-api_key = "358886197589543",
-api_secret = "D7eOqUYJg-B4_8LPR8MwPJQyNAY",
-api_proxy = "http://proxy.server:9999"
-)
+# cloudinary.config(
+# cloud_name = "dbgflnzl3",
+# api_key = "358886197589543",
+# api_secret = "D7eOqUYJg-B4_8LPR8MwPJQyNAY",
+# api_proxy = "http://proxy.server:9999"
+# )
 
 import cloudinary.uploader
 import cloudinary.api
@@ -152,8 +152,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 
@@ -165,8 +163,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Media locations
 
-# MEDIA_URL = 'media/'
-# MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # Shopping basket

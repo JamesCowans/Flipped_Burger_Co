@@ -1,5 +1,6 @@
 from django.db import models
 from restaurant.models import Option
+from cloudinary.models import CloudinaryField
 
 
 # Create your models here.

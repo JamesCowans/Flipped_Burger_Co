@@ -10,33 +10,37 @@
 
     <div class="container">
         <div class="row">
-        <div class="col-12 ">
-            <!-- <img class='img-fluid' id='menu-images' src="{% if option.image %}{{{ option.image.url }}}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}"> -->
-            {% if "placeholder" in about.profile_image.url %}
-            <img src="{% static 'images/awaiting_image.png' %}" width="75%"
-              alt="placeholder image" >
-            {% else %}
-            <img src="{{ detail.option_image.url }}" width="75%"
-              alt="{{ about.title }}">
-            {% endif %}
-       
-            <h1>{{ option.name }}</h1>
-            <h2>
-                <a href="{{ option.category.get_absolute_url }}">
-                    {{ option.category }}
-                </a>
-            </h2>
-            </a>
-            <p>£{{ option.price}}</p>
-            <form action="{% url 'basket:basket_add' option.id %}" method="post">
-                {{ basket_option_form }}
-                {% csrf_token %}
-                <input type="submit" value="Add to basket">
-            </form>
-            {{ option.description|linebreaks }}
+            <div class="col-12 ">
+                <h1>{% if category %}{{ category.name }}{% else %}Menu Options{% endif %}</h1>
+                {% for option in options %}
+                <div class="image-container">
+                    {% if "placeholder" in option.image.url %}
+                    <img class="card-img-top" src="{% static 'img/awaiting_image.png' %}"
+                      alt="placeholder image">
+                    {% else %}
+                    <img class="card-img-top" src=" {{ option.image.url }}">
+                    {% endif %}
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+                    
+                {% endfor %}
+                <form action="{% url 'basket:basket_add' option.id %}" method="post">
+                    {{ basket_option_form }}
+                    {% csrf_token %}
+                    <input type="submit" value="Add to basket">
+                </form>
+                {{ option.description|linebreaks }}
+            </div>
         </div>
     </div>
 {% endblock %}
       
        
-    

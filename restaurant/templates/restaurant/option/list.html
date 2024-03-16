@@ -10,16 +10,29 @@
             {% endif%}
         </h1>
         {% for option in options %}
-        <div>
-          <a href="{{ option.get_absolute_url }}">
-            <img src="{% if option.option_image %}{{ option.option_image.url }}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}">
-          </a>
+        <div class="row">
+          <div class="col-12 ">
+              
+        {% endfor %}
+              {% for option in options %}
+              <div class="image-container">
+                  {% if "placeholder" in option.image.url %}
+                  <img class="card-img-top" src="{% static 'img/awaiting_image.png' %}"
+                    alt="placeholder image">
+                  {% else %}
+                  <img class="card-img-top" src=" {{ option.image.url }}">
+               
+              </div>
+          </div>
+        
+
           <a href ="{{ option.get_absolute_url }}">{{ option.name }}</a>
           <br>
           £{{ option.price }}
         </div>
-        {% endfor %}
+        {% endif %}
       </div>
     </div>
   </div>
+    {% endfor %}
 {% endblock %}
