@@ -19,17 +19,19 @@
                   {% if "placeholder" in option.image.url %}
                   <img id="basket-image" src="{% static 'img/awaiting_image.png' %}"
                     alt="placeholder image">
-                  {% else %}
-                  <img class="img-fluid food-image" id="basket-image" src=" {{ option.image.url }}">
                   <a href ="{{ option.get_absolute_url }}">{{ option.name }}</a>
+                  {% else %}
+                  <img class="img-fluid" id="basket-image" src=" {{ option.image.url }}">
+                  <a href ="{{ option.get_absolute_url }}">{{ option.name }}</a>
+                  <br>
+                  £{{ option.price }}
                
               </div>
           </div>
         
 
           
-          <br>
-          £{{ option.price }}
+          
         </div>
         {% endif %}
       </div>

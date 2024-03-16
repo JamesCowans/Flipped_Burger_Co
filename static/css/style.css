@@ -76,8 +76,8 @@ body{
  #basket-image{
     border-radius: 35px;
     padding: 10px;
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 10px;
+    max-height: 75px;
  }
 
 .basket{
@@ -85,6 +85,6 @@ body{
 }
 
 .food-image{
-   max-width:150px;
-   max-height:150px;
+   max-width:75px;
+   max-height:75px;
 }
