@@ -50,7 +50,7 @@ class Basket:
 
         return sum(item['quantity'] for item in self.basket.values())
     
-    def total_price(self):
+    def get_total_price(self):
         return sum(Decimal(item['price']) * item ['quantity'] for item in self.basket.values())
     
     def empty_basket(self):
