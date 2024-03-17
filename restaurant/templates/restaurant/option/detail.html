@@ -15,10 +15,10 @@
                 {% for option in options %}
                 <div id="basket-image">
                     {% if "placeholder" in option.image.url %}
-                    <img id="basket-image" src="{% static 'img/awaiting_image.png' %}"
+                    <img id="basket-image" class="img-fluid" src="{% static 'img/awaiting_image.png' %}"
                       alt="placeholder image">
                     {% else %}
-                    <img class="img-fluid food-image" id="basket-image" src=" {{ option.image.url }}">
+                    <img class="img-fluid food-image" id="basket-image" src=" {{ option.image.url }} width=200px height=75px">
                     {% endif %}
                 </div>
             </div>

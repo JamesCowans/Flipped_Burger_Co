@@ -85,4 +85,11 @@ body{
 #menu-images{
    max-width: 40px;
    max-height: 40px;
+   padding:10px;
+}
+
+.food-image{
+   max-width: 25px;
+   max-height: 25px;
+   padding: 10px;
 }

@@ -171,3 +171,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 BASKET_SESSION_ID = 'basket'
 
+# image upload size settings
+
+# CKEDITOR_THUMBNAIL_SIZE = (75, 75)
+

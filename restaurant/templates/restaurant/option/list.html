@@ -3,39 +3,30 @@
 
 
 {% block content %}
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col">
         <h1>{% if category %}{{ category.name }}{% else %}Options
             {% endif%}
         </h1>
-        {% for option in options %}
-        <div class="row">
-          <div class="col-12 ">
-              
-        {% endfor %}
-              {% for option in options %}
-              <div>
-                  {% if "placeholder" in option.image.url %}
-                  <img id="basket-image" src="{% static 'img/awaiting_image.png' %}"
-                    alt="placeholder image">
-                  <a href ="{{ option.get_absolute_url }}">{{ option.name }}</a>
-                  {% else %}
-                  <img class="img-fluid" id="basket-image" src=" {{ option.image.url }}">
-                  <a href ="{{ option.get_absolute_url }}">{{ option.name }}</a>
-                  <br>
-                  £{{ option.price }}
-               
-              </div>
-          </div>
-        
-
-          
-          
-        </div>
-        {% endif %}
       </div>
     </div>
+    <div class="row">
+      <div class="col=xxl">
+          {% for option in options %}
+          
+            {% if "placeholder" in option.image.url %}
+            <img id="basket-image" src="{% static 'img/awaiting_image.png' %}"
+              alt="placeholder image">
+            <a href ="{{ option.get_absolute_url }}">{{ option.name }}</a>
+            {% else %}
+            <img class="img-fluid food-image" id="basket-image" src=" {{ option.image.url }}">
+            <a href ="{{ option.get_absolute_url }}">{{ option.name }}</a>
+            <br>
+            £{{ option.price }}
+      </div>
+    </div>
+          {% endif %}
   </div>
     {% endfor %}
 {% endblock %}
