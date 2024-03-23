@@ -1,32 +1,41 @@
 {% extends 'restaurant/base.html' %}
 {% load static %}
 
-
 {% block content %}
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <h1>{% if category %}{{ category.name }}{% else %}Options
-            {% endif%}
-        </h1>
-      </div>
+    <div class="container menu-product">
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="thumbnail" src="{% static 'img/awaiting_image.png' %}">
+                <div id="menu-product">
+                    <h6>This is a product</h6>
+                    <hr>
+                    <button class="btn btn-secondary">Add to basket</button>
+                    <button class="btn btn-secondary">Details</button>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+                <img class="thumbnail" src="{% static 'img/awaiting_image.png' %}">
+                <div id="menu-product">
+                    <h6>This is a product</h6>
+                    <hr>
+                    <button class="btn btn-secondary">Add to basket</button>
+                    <button class="btn btn-secondary">Details</button>
+                </div>
+                
+            </div>
+
+            <div class="col-lg-4">
+                <img class="thumbnail" src="{% static 'img/awaiting_image.png' %}">
+                <div id="menu-product">
+                    <h6>This is a product</h6>
+                    <hr>
+                    <button class="btn btn-secondary">Add to basket</button>
+                    <button class="btn btn-secondary">Details</button>
+                </div>
+                
+            </div>
+        </div>
     </div>
-    <div class="row">
-      <div class="col=xxl">
-          {% for option in options %}
-          
-            {% if "placeholder" in option.image.url %}
-            <img id="basket-image" src="{% static 'img/awaiting_image.png' %}"
-              alt="placeholder image">
-            <a href ="{{ option.get_absolute_url }}">{{ option.name }}</a>
-            {% else %}
-            <img class="img-fluid food-image" id="basket-image" src=" {{ option.image.url }}">
-            <a href ="{{ option.get_absolute_url }}">{{ option.name }}</a>
-            <br>
-            £{{ option.price }}
-      </div>
-    </div>
-          {% endif %}
-  </div>
-    {% endfor %}
 {% endblock %}

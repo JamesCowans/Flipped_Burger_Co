@@ -14,73 +14,76 @@
 <body>
 
   
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Flipped Burger Company</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ms-auto">
-          {% for c in categories %}
-          <li {% if category.slug == c.slug %}class="selected"{% endif %}>
-            <a href="{{ c.get_absolute_url }}" class="nav-link">{{ c.name }}</a>
-          </li>
-          {% endfor %}
-         
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-  <!-- Full Page Image Header with Vertically Centered Content -->
-  <header class="masthead">
-    <div class="container-fluid h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-12 text-center">
-          <img src="{% static 'img/FlippedHeader.jpg' %}" class="img-fluid" id="header-image">
-          <h1 class="fw-light">Flipped Burger Company</h1>
-       
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">Flipped Burger Company</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+              {% for c in categories %}
+              <li {% if category.slug == c.slug %}class="selected"{% endif %}>
+                <a href="{{ c.get_absolute_url }}" class="nav-link">{{ c.name }}</a>
+              </li>
+              {% endfor %}
+            
+              <li class="nav-item">
+                <a class="nav-link" href="#">Basket</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </div>
-  </header>
-  
-  
-  <!-- Page Content -->
-  <div class="basket">
-    {% with total_items=basket|length %}
-      {% if total_items > 0 %}
-        Your basket:
-        <a href="{% url 'basket:basket_detail' %}">
-          {{ total_items }} item{{ total_items|pluralize }},
-          £{{ basket.get_total_price }}
-        </a>
-      {% elif not order %}
-        Your basket is empty.
-      {% endif %}
-    {% endwith %}
-  </div>
-  <section class="py-5">
-    <div class="container">
-      
-      {% block content %}
-      {% endblock %}
-    </div>
-  </section>
-  <footer>
-    <div class="container"></div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-bottom ">
-        <ul class="navbar-nav ms-auto" id="login">
-          <li class="nav-item"><a href="{% url 'admin:index' %}">Restaurant Login</a></li>
-        </ul>
       </nav>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      
+      <!-- Full Page Image Header with Vertically Centered Content -->
+      <header class="masthead">
+        <div class="container-fluid h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12 text-center">
+              <img src="{% static 'img/FlippedHeader.jpg' %}" class="img-fluid" id="header-image">
+              <h1 class="fw-light">Flipped Burger Company</h1>
+          
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      
+      <!-- Page Content -->
+      <!-- <div class="basket">
+        {% with total_items=basket|length %}
+          {% if total_items > 0 %}
+            Your basket:
+            <a href="{% url 'basket:basket_detail' %}">
+              {{ total_items }} item{{ total_items|pluralize }},
+              £{{ basket.get_total_price }}
+            </a>
+          {% elif not order %}
+            Your basket is empty.
+          {% endif %}
+        {% endwith %}
+      </div> -->
+    
+        <div class="container">
+          
+          {% block content %}
+          {% endblock %}
+        </div>
+     
+      <footer>
+        <div class="container"></div>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-bottom ">
+            <ul class="navbar-nav ms-auto" id="login">
+              <li class="nav-item"><a href="{% url 'admin:index' %}">Restaurant Login</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
 </body>
 </html>
+
