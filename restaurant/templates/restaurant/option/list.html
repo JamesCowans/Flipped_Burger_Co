@@ -6,9 +6,9 @@
     
     <div class="row">
         {% for option in options %}
-        <div class="col-lg-4">
+        <div class="col-lg-4 menu-product">
             <img class="thumbnail" src="{% if option.image %}{{ option.image.url }}{% else %}{% static 'img/awaiting_image/png' %}{% endif %}">
-            <div class="menu-product">
+            <div>
                 <h4><strong>{{ option.name }}</strong></h4>
                 <hr>
                 <button class="btn btn-outline-secondary mb-25">£{{ option.price }} Add to basket </button>
