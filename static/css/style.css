@@ -93,10 +93,10 @@ body{
 
 .menu-product{
 
-   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
-   background-color: rgb(0, 255, 42);
+   box-shadow: 12px 12px 2px 1px rgba(171, 171, 214, 0.2);
+   background-color: rgb(133, 139, 134);
    border-radius: 5px;
-   padding: 10px;
+   padding: 50px;
    
    
 }
