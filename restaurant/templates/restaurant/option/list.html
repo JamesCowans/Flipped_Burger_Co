@@ -4,11 +4,11 @@
 {% block content %}
     <hr>
     
-    <div class="row">
+    <div class="row" id="menu-display">
         {% for option in options %}
-        <div class="col-lg-4 menu-image-holder">
+        <div class="col-lg-4">
             <img class="thumbnail" src="{% if option.image %}{{ option.image.url }}{% else %}{% static 'img/awaiting_image/png' %}{% endif %}">
-            <div class="menu-product-detail">
+            <div>
                 <h4><strong>{{ option.name }}</strong></h4>
                 <hr>
                 <button class="btn btn-outline-secondary mb-25">£{{ option.price }} Add to basket </button>
