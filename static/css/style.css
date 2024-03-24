@@ -46,7 +46,7 @@ body{
 
 
 
-.carousel-inner > .item {
+/* .carousel-inner > .item {
     max-width: 20vw;
     max-height: 40vh;
     align-content: center;
@@ -67,7 +67,7 @@ body{
  #menu-options{
     padding: 15px;
     border-top: 20px;
- }
+ } */
 
  #login{
     padding-right: 10px;
@@ -87,4 +87,24 @@ body{
 .food-image{
    max-width:75px;
    max-height:75px;
+}
+
+.menu-product{
+
+   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+   background-color: rgb(0, 255, 42);
+   border-radius: 25px;
+   padding: 10px;
+   
+   
+}
+
+/* .menu-product{
+   padding-top: 25px;
+} */
+
+#social{
+   display: inline;
+   font-size: large;
+
 }

@@ -16,7 +16,7 @@
     {% for option in options %}
     <div class="col-6">
       <a href="{{ option.get_absolute_url }}">
-        <img src="{% if option.image %}{{ option.image.url }}{% else %}{% static 'img/awaiting_image/png' %}{% endif %}">
+        <img src="{% if option.image %}{{ option.image.url }}{% else %}{% 'placeholder' '%}{% endif %}">
       </a>
     
       {% if "placeholder" in option.image.url %}

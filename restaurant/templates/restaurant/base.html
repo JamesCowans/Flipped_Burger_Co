@@ -5,10 +5,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Flipped Burger Co.</title>
+  <script src="https://kit.fontawesome.com/d6b1861be4.js" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  
-<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
 
 </head>
 <body>
@@ -30,7 +34,7 @@
               {% endfor %}
             
               <li class="nav-item">
-                <a class="nav-link" href="#">Basket</a>
+                <a class="nav-link" href="#"><i class="fa-solid fa-basket-shopping"> Basket</i></a>
               </li>
             </ul>
           </div>
@@ -44,8 +48,18 @@
             <div class="col-12 text-center">
               <img src="{% static 'img/FlippedHeader.jpg' %}" class="img-fluid" id="header-image">
               <h1 class="fw-light">Flipped Burger Company</h1>
+
+              
           
             </div>
+            <div class="row h-100 align-items-center">
+              <div class="col-12 text-center">
+                
+                <i id="social" class="fa-brands fa-square-instagram"></i><i id="social" class="fa-brands fa-square-facebook"></i></h1>
+  
+                
+            
+              </div>
           </div>
         </div>
       </header>

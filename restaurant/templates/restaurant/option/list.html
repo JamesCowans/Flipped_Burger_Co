@@ -2,40 +2,21 @@
 {% load static %}
 
 {% block content %}
-    <div class="container menu-product">
-        <div class="row">
-            <div class="col-lg-4">
-                <img class="thumbnail" src="{% static 'img/awaiting_image.png' %}">
-                <div id="menu-product">
-                    <h6>This is a product</h6>
-                    <hr>
-                    <button class="btn btn-secondary">Add to basket</button>
-                    <button class="btn btn-secondary">Details</button>
-                </div>
-
-            </div>
-
-            <div class="col-lg-4">
-                <img class="thumbnail" src="{% static 'img/awaiting_image.png' %}">
-                <div id="menu-product">
-                    <h6>This is a product</h6>
-                    <hr>
-                    <button class="btn btn-secondary">Add to basket</button>
-                    <button class="btn btn-secondary">Details</button>
-                </div>
+    <hr>
+    
+    <div class="row">
+        {% for option in options %}
+        <div class="col-lg-4">
+            <img class="thumbnail" src="{% if option.image %}{{ option.image.url }}{% else %}{% static 'img/awaiting_image/png' %}{% endif %}">
+            <div class="menu-product">
+                <h4><strong>{{ option.name }}</strong></h4>
+                <hr>
+                <button class="btn btn-outline-secondary mb-25">£{{ option.price }} Add to basket </button>
+                <a class="btn btn-outline-secondary" href="{{ option.get_absolute_url }}">Details</a>
+                <hr>
                 
-            </div>
-
-            <div class="col-lg-4">
-                <img class="thumbnail" src="{% static 'img/awaiting_image.png' %}">
-                <div id="menu-product">
-                    <h6>This is a product</h6>
-                    <hr>
-                    <button class="btn btn-secondary">Add to basket</button>
-                    <button class="btn btn-secondary">Details</button>
-                </div>
-                
-            </div>
+            </div>          
         </div>
+        {% endfor %}
     </div>
-{% endblock %}
+{% endblock %}                                                                                                     b                                                                          
