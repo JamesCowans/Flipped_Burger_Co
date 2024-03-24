@@ -3,7 +3,7 @@
 
 
 body{
-    background-color: rgb(232, 243, 242);
+    background-color: red;
  }
 
  .masthead {
@@ -20,7 +20,6 @@ body{
 .masthead i{
    font-size: xx-large;
 }
-
 #header-image{
     border-radius: 30px;
     padding-top: 5px;
