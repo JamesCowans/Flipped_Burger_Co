@@ -32,6 +32,8 @@
 
                     
                 {% endfor %}
+
+                <!-- Use to add item to basket -->
                 <form action="{% url 'basket:basket_add' option.id %}" method="post">
                     {{ basket_option_form }}
                     {% csrf_token %}
