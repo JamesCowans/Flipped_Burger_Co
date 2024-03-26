@@ -14,6 +14,7 @@ class Order(models.Model):
     post_code = models.CharField(max_length=10)   
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    comments = models.TextField(blank=True)
 
     class Meta:
         ordering = ['-created']
