@@ -15,7 +15,7 @@ def basket_add(request, option_id):
     form = BasketAddOptionForm(request.POST)
     if form.is_valid():
         cd = form.cleaned_data
-        basket.add(option=option, quantity = cd['quantity'], override_quantity=cd['override'])
+        basket.add(option=option, quantity = cd['quantity'], override_quantity = cd['override'])
     return redirect('basket:basket_detail')
 
 
@@ -27,12 +27,20 @@ def basket_remove(request, option_id):
     basket.remove(option)
     return redirect('basket:basket_detail')
 
+
+
+# def basket_detail(request):
+#     basket = Basket(request)
+#     for item in basket:
+#         item['update_quantity_form'] = BasketAddOptionForm(initial={'quantity': item['quantity'], 'override': True})
+#     return render(request, 'basket/detail.html', {'basket' : basket})
+
+
 def basket_detail(request):
     basket = Basket(request)
     for item in basket:
-        item['update_quantity_form'] = BasketAddOptionForm(initial={'quantity': item['quantity'], 'override': True})
-    return render(request, 'basket/detail.html', {'basket' : basket})
-
-
-
+        item['update_quantity_form'] = BasketAddOptionForm(initial={
+                            'quantity': item['quantity'],
+                            'override': True})
+    return render(request, 'basket/detail.html', {'basket': basket})
 
