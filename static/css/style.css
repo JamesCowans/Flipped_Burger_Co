@@ -4,6 +4,7 @@
 
 body{
     background-color: rgb(232, 243, 242);
+    padding-bottom: 50px;
  }
 
  .masthead {
@@ -86,4 +87,8 @@ body{
 #menu-display{
    height: 100px;
    width: 15-px;
+}
+
+#bottom-nav{
+   margin-top: 50px;
 }

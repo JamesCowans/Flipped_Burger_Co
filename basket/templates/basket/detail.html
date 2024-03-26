@@ -34,7 +34,7 @@
     <br>
     
 
-    <div>
+    <!-- <div>
         <div class="row">
             <div style="flex: 2;"></div>
             <div style="flex: 2;">Products</div>
@@ -44,7 +44,50 @@
            
 
         </div>
-    </div>
+    </div> -->
+    <table class="basket">
+        <thead>
+            <tr>
+              
+                <th>Option</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+                <th>Item Price</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in basket %}
+                {% with option=item.option %}
+                    <tr>
+                        
+                        <td>{{ option.name }}</td>
+                        <td>
+                            <form action="{% url 'basket:basket_add' option.id %}" method="post">
+                                {{ item.update_quantity_form.quantity }}
+                                {{ item.update_quantity_form.override }}
+                                <input type="submit" value="update">
+                                {% csrf_token %}
+                            </form>
+                        </td>
+                        <td>
+                            <form action="{% url 'basket:basket_remove' option.id %}" method = "post">
+                                <input type="submit" value="Remove">
+                                {% csrf_token %}
+                            </form>
+                        </td>
+                        <td class="num" id="basket-price">£{{ item.price }}</td>
+                        <td class="num" id="basket-price">£{{ item.total_price }}</td>
+                    </tr>
+                {% endwith %}
+            {% endfor %}
+                    <tr class="total">
+                        <td>Total</td>
+                        <td colspan="4"></td>
+                        <td class="num">£{{ basket.get_total_price }}</td>
+                    </tr>
+        </tbody>
+    </table>
 
 </div>
 
