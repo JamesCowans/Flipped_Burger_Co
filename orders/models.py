@@ -22,6 +22,8 @@ class Order(models.Model):
             models.Index(fields=['created']),
         ]
 
+   
+
     def __str__(self):
         return f'Order {self.id}'
     
