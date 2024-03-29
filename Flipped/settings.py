@@ -20,7 +20,12 @@ if os.path.isfile('env.py'):
 
 # import cloudinary
 
-
+# cloudinary.config(
+# cloud_name = "dbgflnzl3",
+# api_key = "358886197589543",
+# api_secret = "D7eOqUYJg-B4_8LPR8MwPJQyNAY",
+# api_proxy = "http://proxy.server:9999"
+# )
 
 import cloudinary.uploader
 import cloudinary.api
@@ -96,6 +101,14 @@ WSGI_APPLICATION = 'Flipped.wsgi.application'
 
 
 # Database
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 DATABASES = {
     'default':
@@ -104,7 +117,8 @@ DATABASES = {
 if 'test' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
-
+# Password validation
+# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -139,7 +153,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -164,6 +178,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 BASKET_SESSION_ID = 'basket'
 
+# image upload size settings
+
+# CKEDITOR_THUMBNAIL_SIZE = (75, 75)
 
 #Crispy Forms
 

@@ -24,7 +24,11 @@
         </div>
     </div>
 
-   
+    <!-- <br>
+    
+
+    <hr>
+    <br> -->
     <table class="basket">
         <thead>
             <tr>
@@ -41,7 +45,18 @@
                     <tr>
                         
                         <td>{{ option.name }}</td>
-                      
+                        <!-- <td>
+                            <form action="{% url 'basket:basket_add' option.id %}" method="post">
+                                
+                                {{ item.update_quantity_form.override }}
+                                {{ item.update_quantity_form.quantity }}
+                                
+                                <input type="submit" value="update">
+                                {% csrf_token %}
+                                
+                            </form>
+                        </td> -->
+                        <td>
                             <form action="{% url 'basket:basket_remove' option.id %}" method = "post">
                                 <input class="btn btn-outline-secondary" type="submit" value="Remove">
                                 {% csrf_token %}

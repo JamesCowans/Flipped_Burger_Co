@@ -11,7 +11,7 @@
             <div>
                 <h4><strong>{{ option.name }}</strong></h4>
                 <hr>
-              
+                <!-- <a class="btn btn-outline-secondary mb-25" href="{% url 'basket:basket_add' option.id %}">£{{ option.price }} Add to basket </button> -->
                 
                 <a class="btn btn-outline-secondary" href="{{ option.get_absolute_url }}">£{{ option.price }} | Select</a>
                 <hr>

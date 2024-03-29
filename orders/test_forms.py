@@ -1,8 +1,8 @@
-# from django.test import TestCase
-# from .forms import OrderPlacementForm
+from django.test import TestCase
+from .forms import OrderPlacementForm
 
-# # Create your tests here.
-# # fields in the form = ['first_name', 'last_name', 'email', 'address', 'town', 'post_code', 'comments']
+# Create your tests here.
+# fields in the form = ['first_name', 'last_name', 'email', 'address', 'town', 'post_code', 'comments']
 
 class TestOrderPlacementForm(TestCase):
 

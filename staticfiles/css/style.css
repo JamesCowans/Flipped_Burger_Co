@@ -6,3 +6,84 @@ body{
     background-color: rgb(232, 243, 242);
  }
 
+ .masthead {
+    
+    min-height: 200px;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+   
+  }
+
+.masthead i{
+   font-size: xx-large;
+}
+
+#header-image{
+    border-radius: 30px;
+    padding-top: 5px;
+ 
+}
+
+#bottom-nav{
+    float: right;
+}
+
+
+
+
+
+ #login{
+    padding-right: 10px;
+ }
+
+ #basket-image{
+    border-radius: 35px;
+    padding: 10px;
+    max-width: 10px;
+    max-height: 75px;
+ }
+
+.basket{
+   padding-left: 10px;
+}
+
+.food-image{
+   max-width:75px;
+   max-height:75px;
+}
+
+.menu-product-detail{
+
+  
+   background-color: rgb(189, 194, 190);
+  
+   padding: 50px;
+   
+   
+}
+
+.menu-image-holder{
+   background-color: red;
+}
+
+
+
+
+#social{
+   display: inline-block;
+   font-size: l400px;
+
+}
+
+.thumbnail{
+   height: 75px;
+   width: 75px;
+}
+
+#menu-display{
+   height: 100px;
+   width: 15-px;
+}
