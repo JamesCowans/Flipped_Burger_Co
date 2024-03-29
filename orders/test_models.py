@@ -14,27 +14,30 @@ from .models import Order
 #     updated = models.DateTimeField(auto_now=True)
 #     comments = models.TextField(blank=True)
 
-class TestOrderModel(TestCase):
-    def test_model_order(self):
-        test_order = Order(
-        first_name = First_name.objects.create(first_name='testfirst'),
-        last_name = Last_name.objects.create(last_name='testlast'),
-        email = Email.onjects.create(email='test@email.com'),
-        address = Address.objects.create(address='testAddress'),
-        town = Town.objects.create(town='testTowm'),
-        post_code = Post_code.objects.create('testPostcode'),
-        comments = Comments.objects.create('testComment')
-
-        customer_order = CustomerOrder.objects.create(
-            first_name='James',
-            last_name='Cowans',
-            email='Jamescowans@hotmail.com',
-            address='here',
-            town='there',
-            post_code = 'NE32FP',
-            comment = 'test'
-        )
+class TestModels(TestCase):
+    def setUp(self):
+        First_name.objects.create(first_name='testfirst'),
+        Last_name.objects.create(last_name='testlast'),
+        Email.onjects.create(email='test@email.com'),
+        Address.objects.create(address='testAddress'),
+        Town.objects.create(town='testTowm'),
+        Post_code.objects.create('testPostcode'),
+        Comments.objects.create('testComment')
 
 
-        # self.assertEquals(str(customer_order), 'James')
-        self.assertTrue(isinstance(customer_order, CustomerOrder))
+    def customer_order(self):
+        # customer_order = Order.objects.create(
+        first_name = First_name.objects.create(name="lion")
+            # first_name='Steve',
+            # last_name='Cowans',
+            # email='Jamescowans@hotmail.com',
+            # address='here',
+            # town='there',
+            # post_code = 'NE32FP',
+            # comment = 'test'
+        # )
+
+
+        # self.assertEquals(str(first_name), 'James')
+        self.assertEqual(first_name.name(), 'lion' )
+    # self.assertTrue(isinstance(customer_order, Order))
