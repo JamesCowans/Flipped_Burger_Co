@@ -14,5 +14,5 @@ class OrderPlacementForm(forms.ModelForm):
             'address': forms.TextInput(attrs={'class': 'form-control'}),
             'town': forms.TextInput(attrs={'class': 'form-control'}),
             'post_code': forms.TextInput(attrs={'class': 'form-control'}),
-            'comments': forms.TextInput(attrs={'class': 'form-control'}),
+            'comments': forms.Textarea(attrs={'class': 'form-control'}),
         }
