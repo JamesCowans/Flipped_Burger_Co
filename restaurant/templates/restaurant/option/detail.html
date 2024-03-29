@@ -37,7 +37,7 @@
                 <form action="{% url 'basket:basket_add' option.id %}" method="post">
                     {{ basket_option_form }}
                     {% csrf_token %}
-                    <input class="btn-outline-secondary" type="submit" value="Add to basket">
+                    <input class="btn btn-outline-secondary" type="submit" value="Add to basket">
                 </form>
                 {{ option.description|linebreaks }}
             </div>

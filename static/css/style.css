@@ -73,9 +73,10 @@ body{
 
 
 
-#social{
+#social .i{
    display: inline-block;
    font-size: l400px;
+   background-color:  black;
 
 }
 
@@ -92,3 +93,4 @@ body{
 #bottom-nav{
    margin-top: 50px;
 }
+

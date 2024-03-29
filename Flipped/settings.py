@@ -59,6 +59,8 @@ INSTALLED_APPS = [
     'basket.apps.BasketConfig',
     'orders.apps.OrdersConfig',
     'cloudinary',
+    'crispy_forms',
+    'crispy_bootstrap5',
 
 ]
     
@@ -88,6 +90,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'basket.context_processors.basket',
+                
             ],
         },
     },
@@ -175,3 +178,8 @@ BASKET_SESSION_ID = 'basket'
 
 # CKEDITOR_THUMBNAIL_SIZE = (75, 75)
 
+#Crispy Forms
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
