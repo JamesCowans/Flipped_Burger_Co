@@ -64,6 +64,38 @@ There has been an automated test created to check that the customer order form i
 
 ## Manual Testing
 
-Multiple test orders have been placed via mobile and through heroku on a laptop with the results visible within the admin portal. {Insert Relevent Images}
+Multiple test orders have been placed via mobile and through heroku on a laptop with the results visible within the admin portal.
+
+![alt text](image.png)
+
+## This is the view of the main page on the Heroku App.
+
+![alt text](image-1.png)
+
+## This image shows the detail of the burger we have selected.
+
+![alt text](image-2.png)
+
+## This image shows the basket with the detail of what has been added.
+
+![alt text](image-3.png)
+
+## This image shows the checkout form the customer must fill in to complete the order.
+
+![alt text](image-4.png)
+
+## This shows the confirmation and order number for the test order.
+
+![alt text](image-5.png)
+
+## This shows the admin page the restaurant can log into to see the details of the orders.
+
+![alt text](image-6.png)
+
+## This shows the test order.
 
 
+
+# Known Issues
+
+There is an issue with the newly updated Microsoft Edge browser, it is struggles to process the URLs, this issue does not appear on mobile, tablet or mozzilla and has only appeared since the update at the end of March 2024.
