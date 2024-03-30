@@ -19,7 +19,7 @@ class Basket:
             self.basket[option_id] = {'quantity' :0, 'price' :str(option.price)}
 
         if override_quantity:
-            self.basket[option_id]['quantity'] = quantity
+            self.basket[option_id]['quantity'] -= quantity
         else:
             self.basket[option_id]['quantity'] += quantity
             self.save()

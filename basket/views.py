@@ -29,18 +29,11 @@ def basket_remove(request, option_id):
 
 
 
-# def basket_detail(request):
-#     basket = Basket(request)
-#     for item in basket:
-#         item['update_quantity_form'] = BasketAddOptionForm(initial={'quantity': item['quantity'], 'override': True})
-#     return render(request, 'basket/detail.html', {'basket' : basket})
-
-
 def basket_detail(request):
     basket = Basket(request)
-    for item in basket:
-        item['update_quantity_form'] = BasketAddOptionForm(initial={
-                            'quantity': item['quantity'],
-                            'override': True})
-    return render(request, 'basket/detail.html', {'basket': basket})
+    # for item in basket:
+    #     item['update_quantity_form'] = BasketAddOptionForm(initial={'quantity': item['quantity'], 'override': True})
+    return render(request, 'basket/detail.html', {'basket' : basket})
+
+
 
