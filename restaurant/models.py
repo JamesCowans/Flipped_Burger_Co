@@ -34,7 +34,7 @@ class Option(models.Model):
     slug = models.SlugField(max_length=200)
     image = CloudinaryField('image', default='static/img/awaiting_image.png')
     description = models.TextField(blank=True)
-    alt_tag = models.TextField(blank=True)
+    alt_tag = models.CharField(max_length=50, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
