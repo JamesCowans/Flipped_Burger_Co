@@ -25,6 +25,7 @@ urlpatterns = [
     path('orders/', include('orders.urls', namespace='orders')),
     path('', include('restaurant.urls', namespace='restaurant')),
     path("accounts/", include("allauth.urls")),
+    path('summernote/', include('django_summernote.urls')),
 ]
 
 if settings.DEBUG:
