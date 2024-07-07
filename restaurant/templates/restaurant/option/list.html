@@ -7,7 +7,7 @@
     <div class="row" id="menu-display">
         {% for option in options %}
         <div class="col-lg-4">
-            <img class="thumbnail" src="{% if option.image %}{{ option.image.url }}{% else %}{% static 'img/awaiting_image.png' %}{% endif %}">
+            <img class="thumbnail" src="{% if option.image %}{{ option.image.url }}alt="{% static 'img/awaiting_image.png' %}{% endif %}">
             <div>
                 <h4><strong>{{ option.name }}</strong></h4>
                 <hr>

@@ -18,8 +18,6 @@ if os.path.isfile('env.py'):
     import env
 
 
-
-
 import cloudinary.uploader
 import cloudinary.api
 
@@ -59,6 +57,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'django_summernote',
+    
 
 ]
 
