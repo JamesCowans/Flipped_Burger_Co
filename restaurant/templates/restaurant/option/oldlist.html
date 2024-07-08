@@ -11,9 +11,7 @@
             <div>
                 <h4><strong>{{ option.name }}</strong></h4>
                 <hr>
-               <button type="button" id="add-to-basket" value="{{option.id}}" class="btn btn-secondary btn-sm">
-               Add to basket
-               </button>
+                <!-- <a class="btn btn-outline-secondary mb-25" href="{% url 'basket:basket_add' option.id %}">£{{ option.price }} Add to basket </button> -->
                 
                 <a class="btn btn-outline-secondary" href="{{ option.get_absolute_url }}">£{{ option.price }} | Select</a>
                 
@@ -24,35 +22,4 @@
         </div>
         {% endfor %}
     </div>
-
-    <script>
-            $(document).on('click', '#add-button', function(e){
-
-                e.preventDefault();
-
-                $.ajax({
-
-                type: 'POST',
-                url: '{% url "basket-add %}',
-                data: { 
-
-                    option_id: $('#add-to-basket').val(),
-                    csrfmiddlewaretoken: "{{ csrf_token }}",
-                    action: 'post'
-
-                    },
-
-                    sucess: function(json){
-
-                    },
-
-                    error: function(xhr, errmsg, err){
-                    };
-                    
-
-                });
-
-            });
-    </script>
-            
 {% endblock %}                                                                                                     b                                                                          

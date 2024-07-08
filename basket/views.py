@@ -8,16 +8,29 @@ from basket.forms import BasketAddOptionForm
 
 # Create your views here.
 
-@require_POST
-def basket_add(request, option_id):
-    basket = Basket(request)
-    option = get_object_or_404(Option, id=option_id)
-    form = BasketAddOptionForm(request.POST)
-    if form.is_valid():
-        cd = form.cleaned_data
-        basket.add(option=option, quantity = cd['quantity'], override_quantity = cd['override'])
-    return redirect('basket:basket_detail')
+# @require_POST
+# def basket_add(request, option_id):
+#     basket = Basket(request)
+#     option = get_object_or_404(Option, id=option_id)
+#     form = BasketAddOptionForm(request.POST)
+#     if form.is_valid():
+#         cd = form.cleaned_data
+#         basket.add(option=option, quantity = cd['quantity'], override_quantity = cd['override'])
+#     return redirect('basket:basket_detail')
 
+
+def basket_add(request):
+    
+    basket = Basket(request)
+    
+    if request.POST.get('action') == 'POST':
+        
+        option.id = int(request.POST.get('option_id'))
+        
+        option = get_object_or_404(Option, id=option_id)
+        
+        basket.add(option=option)
+        
 
 
 @require_POST
