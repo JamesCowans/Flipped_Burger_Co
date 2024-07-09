@@ -8,11 +8,11 @@ class Basket():
     def __init__(self, request):
         
         self.session = request.session
-        basket = self.session.get('session_key')
+        basket = self.session.get('basket_session')
         
-        if 'session_key' not in request.session:
+        if 'basket_session' not in request.session:
             
-            basket = self.session['session_key'] = {}
+            basket = self.session['basket_session'] = {}
             
         self.basket = basket
         

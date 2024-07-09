@@ -40,7 +40,7 @@
             
              
               <li class="nav-item">
-                <a class="btn btn-outline-secondary" href="{% url 'admin:index' %}">Restaurant Login</a>
+                <a class="nav-link" href="{% url 'admin:index' %}">Restaurant Login</a>
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item">
@@ -55,9 +55,12 @@
                 <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
               </li>
               <li class="nav-item">
-                <a type="button" role="button" href="{% url 'detail' %}" class="btn btn-outline-secondary">
+                <a type="button" role="button" href="{% url 'basket:basket-detail' %}" class="btn">
                   <i class="fa fa-shopping-cart" aria-hidden="true"></i>
               </li>
+              
+              
+              
               {% endif %}
             </ul>
           </div>
@@ -77,27 +80,27 @@
               <h1 class="fw-light">Flipped Burger Company</h1>
             </div>
            
-              <div class="col-3 align-items-center"> 
+              {% comment %} <div class="col-3 align-items-center"> 
                 <a href="http://instagram.com" target="_blank"><i  class="fa-brands fa-square-instagram"></i></a>        
               </div>
               <div class="col-3 align-items-center">
                 <a href="http://www.facebook.com" target="_blank"><i  class="fa-brands fa-square-facebook"></i></a>
-              </div>
+              </div> {% endcomment %}
              
         </div>
       </header>
       
-      
-
-    
-      <div class="container">
+     
+      {% comment %} <div class="container"> {% endcomment %}
         
         {% block content %}
+       
         {% endblock %}
-      </div>
+      {% comment %} </div> {% endcomment %}
      
      
   </div>
+ 
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -39,7 +39,7 @@ def basket_add(request):
         basket.add(option=option)
         
         
-def basket_delete(request):
+def basket_remove(request):
     
     pass
 
