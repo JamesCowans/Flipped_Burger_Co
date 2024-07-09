@@ -54,6 +54,10 @@
               <li class="nav-item">
                 <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
               </li>
+              <li class="nav-item">
+                <a type="button" role="button" href="{% url 'detail' %}" class="btn btn-outline-secondary">
+                  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              </li>
               {% endif %}
             </ul>
           </div>
