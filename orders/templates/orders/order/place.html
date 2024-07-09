@@ -12,7 +12,7 @@ Checkout
             <div class="customer_order_information">
                 <h3>Your order</h3>
                 <ul>
-                    {% for item in basket %}
+                    {% for item in Basket %}
                     <li>
                         {{ item.quantity }}x {{ item.option.name }}
                         <span>£{{ item.total_price }}</span>

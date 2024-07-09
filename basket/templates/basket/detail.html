@@ -1,4 +1,4 @@
-{% include 'restaurant/base.html' %}
+{% extends 'restaurant/base.html' %}
 {% load static %}
 
 {% block title %}
@@ -40,12 +40,12 @@
             </tr>
         </thead>
         <tbody>
-            {% for item in basket %}
+            {% for item in Basket %}
                 {% with option=item.option %}
                     <tr>
                         
                         <td>{{ option.name }}</td>
-                        <!-- <td>
+                        <td>
                             <form action="{% url 'basket:basket_add' option.id %}" method="post">
                                 
                                 {{ item.update_quantity_form.override }}
@@ -55,7 +55,7 @@
                                 {% csrf_token %}
                                 
                             </form>
-                        </td> -->
+                        </td> 
                         <td>
                             <form action="{% url 'basket:basket_remove' option.id %}" method = "post">
                                 <input class="btn btn-outline-secondary" type="submit" value="Remove">
