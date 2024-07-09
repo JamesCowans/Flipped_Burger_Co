@@ -20,11 +20,7 @@ def basket_add(request, option_id):
     return redirect('basket:basket_detail')
 
 
-
-def basket_update(request):
-    
-    pass
-        
+   
 
 
 
