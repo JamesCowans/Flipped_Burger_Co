@@ -99,3 +99,7 @@ Multiple test orders have been placed via mobile and through heroku on a laptop 
 # Known Issues
 
 There is an issue with the newly updated Microsoft Edge browser, it is struggles to process the URLs, this issue does not appear on mobile, tablet or mozzilla and has only appeared since the update at the end of March 2024.
+
+Currently there is a known issue with images loading which has occured without any obvious code changes to the function
+
+There is also an issue with the updating of the basket, when a customer updates the quantity in the basket the quantity reverts back to the original quantity.
